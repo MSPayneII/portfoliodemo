@@ -1,0 +1,404 @@
+
+
+/* define variables for the root element */
+:root{
+  --global-background-color:whitesmoke;
+  --global-text-color: #383838;
+  --global-head-font: 'futura-pt', serif;
+  --global-text-font: 'proxima-nova', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*:focus{
+  outline: 3px solid royalblue; /*puts a 3px black border around all elements in focus.*/
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--global-text-font);
+  font-size: 16px;
+  background-color: var(--global-background-color);
+  color: var(--global-text-color);
+}
+
+body h1,h2,h3,h4 {
+  font-family: var(--global-head-font);
+}
+
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+p {
+  line-height: 1.6em;
+  margin: 0 0 1em;
+}
+
+a{
+  line-height: 40px;
+  color: var(--global-text-color);
+  text-decoration: none;
+  }
+
+
+a:hover{
+  font-weight: bold;
+  color: royalblue;
+}
+
+
+#navigation{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+    flex-direction: column;
+  -webkit-box-pack: justify;
+    justify-content: space-between;
+  -webkit-box-align: center;
+    align-items: center;
+  background: var(--global-background-color);
+  border-bottom: 1px solid darkgrey;
+}
+.nav_links{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+    flex-direction: column;
+  -webkit-box-pack: justify;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    align-items: center;
+  list-style: none;
+}
+
+.nav_links li {
+  padding: 10px;
+
+}
+
+.intro{
+  margin: 0;
+  padding: 50px 20px 0px 20px;
+  line-height: 1.7em;
+}
+
+.intro h1{
+  padding-bottom: 20px;
+}
+
+.section_title, .withinsection_title{
+  padding-bottom: 10px;
+}
+
+
+.project p{
+  display: none;
+}
+
+.project_title{
+  line-height: 1.5em;
+  font-size: 1.5em;
+  text-align: center;
+  padding-bottom: 2px;
+  font-size: 1.3em;
+}
+.projectheader{
+  text-align: center;
+  padding: 50px 20px 0px 20px;
+  line-height: 1.7em;
+}
+
+.project_pic{
+  height: auto;
+  max-width:100%;
+}
+
+.project_thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.header_pic1{
+  background-image: url(../images/mypsychpic.jpg);
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size:cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+  border-radius: 8px;
+  margin-top: 10px;
+  border:1px solid darkgrey;
+  max-width:100%;
+}
+
+.header_pic2{
+  background-image: url(../images/businessschoolwebsite.jpg);
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid darkgrey;
+  max-width:100%;
+}
+
+.myprojects{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+    flex-direction: column;
+  -webkit-box-pack: justify;
+    justify-content: space-between;
+  -webkit-box-align: center;
+    align-items: center;
+  background: var(--global-background-color);
+  margin: 0;
+  padding: 0px 20px 40px 20px;
+}
+
+.current{
+  color: purple;
+  font-weight: bold;
+}
+
+/* code adapted from homework 4 */
+
+
+
+
+
+/* come back to this */
+  .overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    color: purple;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    display:none;
+  }
+
+#logo {
+  margin: 10px 0 0;
+  padding: 10px;
+  text-align: left;
+}
+
+#logo h1 {
+  font-size: 2em;
+  padding: 10px;
+  text-align: center;
+}
+
+#logo h2 {
+  font-size: 1em;
+  font-weight: 600px;
+  text-align: center;
+  display: none;
+}
+#mypsych_content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* pulled from homework 5 */
+footer{
+  background-color: #202020;
+  color: white;
+  grid-column: 1 / -1;
+  grid-row: 7 / auto;
+  padding: 30px;
+  text-align: center;
+}
+
+
+/* code to place skip to content off screen until users uses tab */
+.skip a{
+  background: white;
+  left: 0;
+  padding: 6px;
+  position: absolute; /*position relative to the parent */;
+  top: -180px;    /*place 180px higher */;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+}
+
+.skip a:focus{
+  top:0;
+}
+
+.interest_board{
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.gallery{
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 500px;
+  justify-content: center;
+  align-items:baseline;
+}
+
+.column{
+  -webkit-flex:100%;
+  flex:100%;
+  max-width:100%;
+  margin: 20px;
+}
+.column img{
+  border: 2px whitesmoke solid;
+  width: 100%;
+  vertical-align: top;
+}
+
+.container{
+  padding: 50px;
+}
+
+
+@media screen and (min-width:600px) {
+
+  #navigation{
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+  }
+
+  .nav_links{
+    -webkit-box-orient: horizontal;
+      flex-direction: row;
+  }
+
+  .nav_item{
+    text-align: center;
+  }
+  .intro{
+    padding: 50px 20px 0px 20px;
+    line-height: 1.7em;
+  }
+
+  .intro h1{
+    padding-bottom: 10px;
+  }
+
+
+  .project_title{
+    padding: 25px 0px 5px 2px;
+    font-size: 1.7em;
+  }
+
+  .project p{
+    display:block;
+    text-align: center;
+  }
+
+
+  #logo {
+    padding: 30px;
+    text-align: center;
+  }
+
+  #logo h2{
+    display: block;
+  }
+
+
+
+  .column{
+    -webkit-flex: 50%;
+    flex: 50;
+    max-width: 50%;
+  }
+
+
+}
+
+@media screen and (min-width:900px) {
+
+  .nav_links li {
+    padding: 15px;
+  }
+
+  .myprojects h1, .myprojects p{
+    display: none;
+  }
+
+  .myprojects{
+    -webkit-box-orient: horizontal;
+      flex-direction: row;
+      -webkit-flex: 50%;
+      flex: 50%;
+      max-width:inherit;
+  }
+
+  .project{
+    padding: 20px;
+  }
+
+  .overlay{
+    display: block;
+  }
+  #mypsych{
+    grid-column: 1 / span 1;
+  }
+
+  #businesswebsitecomparison{
+    grid-column: 2 / span 1;
+  }
+
+}
+
+/* code taken from homework assignment 4 */
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: none;
+    transition: none;
+    z-index: 1;
+  }
+
+  .skip a:focus{
+    top:0;
+  }
+}
